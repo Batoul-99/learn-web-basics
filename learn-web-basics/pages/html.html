@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn HTML | Learn Web Basics</title>
+  <link rel="stylesheet" href="../css/lessons.css" type="text/css">
+  <link rel="stylesheet" href="../css/HTML.css" type="text/css">
+</head>
+<body>
+  <!-- first nav -->
+     <nav>
+            <img class="logo" src="../images/logo.svg" width="100" height="100" alt="logo">
+            <ul class="links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="html.html"  class="active">HTML</a></li>
+                <li><a href="css.html">CSS</a></li>
+                <li><a href="js.html">JavaScript</a></li>
+                <li><a href="quizzes.html">Quizzes</a></li>
+                <li><a href="references.html">References</a></li>
+                <li><a href="AboutUs.html">AboutUs</a></li>
+                <li><a href="contact.html">ContactUs</a></li>
+            </ul>
+        </nav>
+
+
+  <!-- Container -->
+  <div class="lesson-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>HTML Topics</h2>
+      <ul>
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#paragraphs">Paragraphs</a></li>
+        <li><a href="#headings">Headings</a></li>
+        <li><a href="#links">Links</a></li>
+        <li><a href="#images">Images</a></li>
+        <li><a href="#lists">Lists</a></li>
+        <li><a href="#tables">Tables</a></li>
+        <li><a href="#forms">Forms</a></li>
+        <li><a href="#videos">Videos</a></li>
+      </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="lesson-content">
+
+      <!-- Lesson 1-intro -->
+      <section id="intro" class="lesson">
+        <h2>Introduction to HTML</h2>
+        <p>HTML (HyperText Markup Language) is the standard language for creating web pages. It structures the content using tags like <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, and <code>&lt;a&gt;</code>.</p>
+        <pre><!--<pre> preserves formatting (spaces, line breaks)-->
+          <code><!--<code> shows the content as code-->
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+              &lt;head&gt;
+                &lt;title&gt;My First Page&lt;/title&gt;
+              &lt;/head&gt;
+              &lt;body&gt;
+                &lt;h1&gt;Hello World!&lt;/h1&gt;
+              &lt;/body&gt;
+            &lt;/html&gt;
+          </code>
+        </pre>
+      </section>
+
+      <!-- Lesson 2-paragraphs -->
+      <section id="paragraphs" class="lesson">
+        <h2>HTML Paragraphs</h2>
+        <p>Paragraphs in HTML are defined using the <code>&lt;p&gt;</code> tag. Each paragraph starts on a new line automatically.</p>
+
+        <pre>
+          <code>
+            &lt;p&gt;This is the first paragraph.&lt;/p&gt;
+            &lt;p&gt;This is another paragraph.&lt;/p&gt;
+          </code>
+        </pre>
+
+        <div class="try-it">
+          <h3>Try It Yourself:</h3>
+          <textarea id="editor">&lt;p&gt;This is a paragraph.&lt;/p&gt;</textarea>
+          <button onclick="runCode('editor', 'preview')">Run ▶</button>
+          <iframe id="preview"></iframe>
+        </div>
+      </section>
+
+     <!--lesson Headings-->
+      <section id="headings" class="lesson">
+        <h2>HTML Headings</h2>
+        <p>Headings are defined with &lt;h1&gt; to &lt;h6&gt; tags.</p>
+
+        <pre>
+          <code>
+            &lt;h1&gt;Heading 1&lt;/h1&gt;
+            &lt;h2&gt;Heading 2&lt;/h2&gt;
+          </code>
+        </pre>
+
+        <div class="try-it">
+          <h3>Try It Yourself:</h3>
+          <textarea id="editor-header">&lt;h1&gt;Hello&lt;/h1&gt;</textarea>
+          <button onclick="runCode('editor-header', 'preview-header')">Run ▶</button>
+          <iframe id="preview-header"></iframe>
+        </div>
+      </section>
+
+
+      <!-- Lesson 3 Links -->
+      <section id="links" class="lesson">
+        <h2>HTML Links</h2>
+        <p>Links are created using the <code>&lt;a&gt;</code> tag with an <code>href</code> attribute:</p>
+        <pre><code>&lt;a href="https://www.example.com"&gt;Visit Example&lt;/a&gt;</code></pre>
+      </section>
+
+      <!-- Lesson 4 Images -->
+      <section id="images" class="lesson">
+        <h2>HTML Images</h2>
+        <p>Images are added using the <code>&lt;img&gt;</code> tag with <code>src</code> and <code>alt</code> attributes:</p>
+        <pre><code>&lt;img src="photo.jpg" alt="Description of image"&gt;</code></pre>
+      </section>
+
+      <!--Lesson 5 lists-->
+      <section id="lists" class="lesson">
+          <h2>HTML Lists</h2>
+          <p>HTML provides two main types of lists: ordered lists using <code>&lt;ol&gt;</code> and unordered lists using <code>&lt;ul&gt;</code>.</p>
+
+          <h3>Unordered List (bullets)</h3>
+          <pre><code>
+        &lt;ul&gt;
+          &lt;li&gt;Coffee&lt;/li&gt;
+          &lt;li&gt;Tea&lt;/li&gt;
+          &lt;li&gt;Milk&lt;/li&gt;
+        &lt;/ul&gt;
+          </code></pre>
+
+          <h3>Ordered List (numbers)</h3>
+          <pre><code>
+        &lt;ol&gt;
+          &lt;li&gt;First&lt;/li&gt;
+          &lt;li&gt;Second&lt;/li&gt;
+          &lt;li&gt;Third&lt;/li&gt;
+        &lt;/ol&gt;
+          </code></pre>
+
+          <div class="try-it">
+            <h3>Try It Yourself:</h3>
+            <textarea id="editor-lists">&lt;ul&gt;
+          &lt;li&gt;Item 1&lt;/li&gt;
+          &lt;li&gt;Item 2&lt;/li&gt;
+        &lt;/ul&gt;</textarea>
+            <button onclick="runCode('editor-lists', 'preview-lists')">Run ▶</button>
+            <iframe id="preview-lists"></iframe>
+          </div>
+        </section>
+
+        <!--Lesson 6 tables-->
+        <section id="tables" class="lesson">
+            <h2>HTML Tables</h2>
+            <p>Tables are created with the <code>&lt;table&gt;</code> tag and organized into rows (<code>&lt;tr&gt;</code>) and cells (<code>&lt;td&gt;</code> or <code>&lt;th&gt;</code>).</p>
+
+            <pre><code>
+          &lt;table border="1"&gt;
+            &lt;tr&gt;
+              &lt;th&gt;Name&lt;/th&gt;
+              &lt;th&gt;Age&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Alice&lt;/td&gt;
+              &lt;td&gt;22&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Bob&lt;/td&gt;
+              &lt;td&gt;25&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/table&gt;
+            </code></pre>
+
+            <div class="try-it">
+              <h3>Try It Yourself:</h3>
+              <textarea id="editor-tables">&lt;table border="1"&gt;
+            &lt;tr&gt;&lt;th&gt;Item&lt;/th&gt;&lt;th&gt;Price&lt;/th&gt;&lt;/tr&gt;
+            &lt;tr&gt;&lt;td&gt;Apple&lt;/td&gt;&lt;td&gt;$1&lt;/td&gt;&lt;/tr&gt;
+          &lt;/table&gt;</textarea>
+              <button onclick="runCode('editor-tables', 'preview-tables')">Run ▶</button>
+              <iframe id="preview-tables"></iframe>
+            </div>
+          </section>
+
+      <!--Lesson 7 forms-->
+      <section id="forms" class="lesson">
+        <h2>HTML Forms</h2>
+        <p>Forms allow users to input data. Common elements include <code>&lt;input&gt;</code>, <code>&lt;label&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;button&gt;</code>.</p>
+
+        <pre><code>
+      &lt;form&gt;
+        &lt;label&gt;Name:&lt;/label&gt;
+        &lt;input type="text" placeholder="Enter your name"&gt;
+
+        &lt;label&gt;Email:&lt;/label&gt;
+        &lt;input type="email" placeholder="Enter your email"&gt;
+
+        &lt;button type="submit"&gt;Submit&lt;/button&gt;
+      &lt;/form&gt;
+        </code></pre>
+
+        <div class="try-it">
+          <h3>Try It Yourself:</h3>
+          <textarea id="editor-forms">&lt;form&gt;
+        &lt;label&gt;Username:&lt;/label&gt;
+        &lt;input type="text"&gt;
+
+        &lt;br&gt;&lt;br&gt;
+
+        &lt;label&gt;Password:&lt;/label&gt;
+        &lt;input type="password"&gt;
+
+        &lt;br&gt;&lt;br&gt;
+
+        &lt;button&gt;Login&lt;/button&gt;
+      &lt;/form&gt;</textarea>
+          <button onclick="runCode('editor-forms', 'preview-forms')">Run ▶</button>
+          <iframe id="preview-forms"></iframe>
+        </div>
+      </section>
+
+
+      <!--Lesson 8 videos-->
+      <section id="videos" class="lesson">
+        <h2>Best Video Tutorials to Learn HTML</h2>
+        <p>These videos are highly recommended for beginners who want to understand HTML quickly and clearly.</p>
+
+        <div class="video-grid">
+          <!-- Video 1 -->
+          <div class="video-card">
+            <h3>HTML Full Course (Bro Code)</h3>
+            <iframe 
+              src="https://www.youtube.com/embed/kUMe1FH4CHE" 
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <!-- Video 2 -->
+          <div class="video-card">
+            <h3>HTML Crash Course (Traversy Media)</h3>
+            <iframe 
+              src="https://www.youtube.com/embed/BsDoLVMnmZs" 
+              allowfullscreen> <!--Here iframe inline frame ou watch the video right there on your page without ever leaving -->
+            </iframe>
+          </div>
+        </div>
+      </section>
+
+
+    </main>
+  </div>
+
+  <!-- JS -->
+  <script src="../js/lessons.js"></script>
+    <!--Footer-->
+        <footer>
+            <p>&copy;2025 Learn Web Basics. All rights reserved.</p>
+        </footer>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn JavaScript | Learn Web Basics</title>
+  <link rel="stylesheet" href="../css/lessons.css" />
+  <link rel="stylesheet" href="../css/JS.css" />
+</head>
+
+<body>
+
+  
+  <!-- first nav -->
+        <nav>
+            <img class="logo" src="../images/logo.svg" width="100" height="100" alt="logo">
+            <ul class="links">
+                <li><a href="../index.html" >Home</a></li>
+                <li><a href="html.html">HTML</a></li>
+                <li><a href="CSS.html">CSS</a></li>
+                <li><a href="js.html" class="active">JavaScript</a></li>
+                <li><a href="quizzes.html">Quizzes</a></li>
+                <li><a href="references.html">References</a></li>
+                <li><a href="AboutUs.html">AboutUs</a></li>
+                <li><a href="contact.html">ContactUs</a></li>
+            </ul>
+        </nav>
+
+
+  <!-- Container -->
+  <div class="lesson-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>JavaScript Topics</h2>
+      <ul>
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#variables">Variables</a></li>
+        <li><a href="#datatypes">Data Types</a></li>
+        <li><a href="#arrays">Arrays</a></li>
+        <li><a href="#objects">Objects</a></li>
+        <li><a href="#dom">DOM Manipulation</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#conditionals">Conditionals</a></li>
+        <li><a href="#loops">Loops</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="lesson-content">
+
+      <!-- LESSON 1 -->
+      <section id="intro" class="lesson">
+        <h2>Introduction to JavaScript</h2>
+        <p>JavaScript makes web pages interactive. It can:</p>
+        <ul class="example-list">
+          <li>Change HTML content</li>
+          <li>Change CSS styles</li>
+          <li>Respond to user clicks and actions</li>
+          <li>Create animations</li>
+        </ul>
+
+<pre><code>&lt;script&gt;
+  document.write("Hello from JavaScript!");
+&lt;/script&gt;</code></pre>
+      </section>
+
+      <!-- LESSON 2 -->
+      <section id="variables" class="lesson">
+        <h2>Variables</h2>
+        <p>Variables store data. JavaScript uses <code>let</code>, <code>const</code>, and <code>var</code>.</p>
+
+<pre><code>let name = "Zainab";
+let age = 20;
+
+console.log("My name is " + name);
+</code></pre>
+
+      </section>
+
+      <!-- LESSON 3 -->
+      <section id="datatypes" class="lesson">
+        <h2>Data Types</h2>
+        <p>JavaScript has several data types:</p>
+        <ul class="example-list">
+          <li>String</li>
+          <li>Number</li>
+          <li>Boolean</li>
+          <li>Array</li>
+          <li>Object</li>
+        </ul>
+
+<pre><code>let name = "Zainab";   // String
+let age = 20;          // Number
+let isStudent = true;  // Boolean</code></pre>
+      </section>
+
+      <!-- LESSON 4 -->
+      <section id="arrays" class="lesson">
+        <h2>Arrays</h2>
+        <p>Arrays store multiple values.</p>
+
+<pre><code>let colors = ["red", "green", "blue"];
+console.log(colors[1]); // green</code></pre>
+      </section>
+
+      <!-- LESSON 5 -->
+      <section id="objects" class="lesson">
+        <h2>Objects</h2>
+        <p>Objects store data in key–value pairs.</p>
+
+<pre><code>let person = {
+  name: "Zainab",
+  age: 20,
+  hobby: "Coding"
+};
+
+console.log(person.name);</code></pre>
+      </section>
+
+      <!-- LESSON 6 -->
+      <section id="dom" class="lesson">
+        <h2>DOM Manipulation</h2>
+        <p>The DOM allows JavaScript to change HTML elements.</p>
+
+<pre><code>&lt;h1 id="title"&gt;Hello&lt;/h1&gt;
+
+&lt;script&gt;
+document.getElementById("title").innerText = "Changed with JS!";
+&lt;/script&gt;</code></pre>
+      </section>
+
+      <!-- LESSON 7 -->
+      <section id="events" class="lesson">
+        <h2>Events</h2>
+        <p>Events respond to user actions like clicking or typing.</p>
+
+<pre><code>&lt;button onclick="changeColor()"&gt;Click me&lt;/button&gt;
+
+&lt;script&gt;
+function changeColor() {
+  document.body.style.backgroundColor = "lightblue";
+}
+&lt;/script&gt;</code></pre>
+      </section>
+
+      <!-- LESSON 8 -->
+      <section id="conditionals" class="lesson">
+        <h2>Conditionals</h2>
+        <p>Conditionals let your code make decisions.</p>
+
+<pre><code>let age = 18;
+
+if (age >= 18) {
+  console.log("Adult");
+} else {
+  console.log("Minor");
+}
+</code></pre>
+      </section>
+
+      <!-- LESSON 9 -->
+      <section id="loops" class="lesson">
+        <h2>Loops</h2>
+        <p>Loops repeat code.</p>
+
+<pre><code>for (let i = 1; i <= 5; i++) {
+  console.log("Number: " + i);
+}
+</code></pre>
+      </section>
+
+      <!-- VIDEOS -->
+      <section class="lesson">
+        <h2>Recommended JavaScript Videos</h2>
+        <div class="video-grid">
+          <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/W6NZfCO5SIk"></iframe>
+          </div>
+          <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/hdI2bqOjy3c"></iframe>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- JS -->
+  <script src="js/lessons.js"></script>
+  <!--Footer-->
+        <footer>
+            <p>&copy;2025 Learn Web Basics. All rights reserved.</p>
+        </footer>
+</body>
+</html>

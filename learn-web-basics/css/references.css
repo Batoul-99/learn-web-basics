@@ -1,0 +1,180 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    line-height: 1.6;
+    background: #0b0b0b;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(197, 70, 176);
+
+}
+
+/*Here Nav  */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: black;
+  color: white;
+  padding: 15px 50px;
+}
+
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+   
+
+}
+
+nav li a {
+    color: white;
+    text-decoration:  none;
+    font-weight: 500;
+}
+
+nav a.active,
+nav a:hover {
+  border: thin dashed white;
+  padding: 8px;
+  transition:0.3s;
+  transform: scale(1.05);
+  color:#f5fcfa;
+  background: linear-gradient(135deg, #ec1ab8, #21211e);
+}
+
+
+/* Header */
+.header {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+/* Sections */
+.ref-container {
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+}
+
+.ref-section {
+  margin-bottom: 50px;
+}
+
+.ref-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  border-left: 5px solid #00d0ff;
+  padding-left: 10px;
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  width: calc(33.33% - 20px); /*total width 100/3 - 20px */
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+  border: 1px solid #222;
+}
+
+.card:hover {
+  background: #00bcd4;
+  color: black;
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.card p {
+  color: #ddd;
+  line-height: 1.5;
+}
+
+footer {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+/* Now Responsive */
+
+@media (max-width: 950px) {
+  .card {
+    /* limit width to prevent overflow if you have margins */
+    width: 45%; 
+    margin: 10px auto; 
+  }
+}
+@media (max-width: 991px) {
+  nav {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+     nav ul {
+        flex-direction: column; /* here I turned the nav in a virtical form on small screens*/
+        gap: 10px;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+    /* Reduce padding on mobile so it fits! */
+    padding: 15px 10px; 
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    text-align: center;
+    padding: 0; /* Remove default padding */
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    /* Use auto instead of 100% to respect margins */
+    width: auto; 
+    margin: 10px 20px; /* Add space on sides */
+    display: block;
+  }
+
+  .header h1 {
+    font-size: 2.2rem;
+    word-wrap: break-word; /*Here It prevents long words from breaking layout */
+  }
+}

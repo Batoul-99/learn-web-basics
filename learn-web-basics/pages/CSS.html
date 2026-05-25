@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn CSS | Learn Web Basics</title>
+  <link rel="stylesheet" href="../css/lessons.css" />
+  <link rel="stylesheet" href="../css/CSS.css" />
+</head>
+<body>
+  <!-- first nav -->
+        <nav>
+            <img class="logo" src="../images/logo.svg" width="100" height="100" alt="logo">
+            <ul class="links">
+                <li><a href="../index.html" >Home</a></li>
+                <li><a href="html.html">HTML</a></li>
+                <li><a href="CSS.html" class="active">CSS</a></li>
+                <li><a href="js.html">JavaScript</a></li>
+                <li><a href="quizzes.html">Quizzes</a></li>
+                <li><a href="references.html">References</a></li>
+                <li><a href="AboutUs.html">AboutUs</a></li>
+                <li><a href="contact.html">ContactUs</a></li>
+            </ul>
+        </nav>
+
+
+  <!-- Container -->
+  <div class="lesson-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>CSS Topics</h2>
+      <ul>
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#selectors">Selectors</a></li>
+        <li><a href="#colors">Colors</a></li>
+        <li><a href="#box">Box Model</a></li>
+        <li><a href="#fonts">Fonts & Text</a></li>
+        <li><a href="#backgrounds">Backgrounds</a></li>
+        <li><a href="#flexbox">Flexbox</a></li>
+        <li><a href="#grid">CSS Grid</a></li>
+        <li><a href="#videos">Video Tutorials</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="lesson-content">
+      <!-- Lesson 1 -->
+      <section id="intro" class="lesson">
+        <h2>Introduction to CSS</h2>
+        <p>CSS (Cascading Style Sheets) controls how HTML elements look on the page. You can use it to set colors, fonts, layouts, and animations.</p>
+        <pre>
+            <code>
+              p {
+                color: blue;
+                font-size: 18px;
+              }
+           </code>
+         </pre>
+      </section>
+
+      <!-- Lesson 2 -->
+      <section id="selectors" class="lesson">
+        <h2>CSS Selectors</h2>
+        <p>Selectors tell the browser which HTML elements to style. Examples:</p>
+        <pre><code>/* Element selector */
+            p {
+              color: green;
+            }
+
+            /* Class selector */
+            .intro {
+              font-weight: bold;
+            }
+
+            /* ID selector */
+            #main-title {
+              color: darkblue;
+            }
+        </code></pre>
+
+        <div class="try-it">
+          <h3>Try It Yourself:</h3>
+          <textarea id="editor">
+              &lt;h1 id="main-title"&gt;Hello World&lt;/h1&gt;
+              &lt;p class="intro"&gt;This is a styled paragraph.&lt;/p&gt;
+              &lt;style&gt;
+                h1 { color: blue; }
+                .intro { color: darkgreen; font-weight: bold; }
+              &lt;/style&gt;
+          </textarea>
+          <button onclick="runCode('editor', 'preview')">Run ▶</button>
+          <iframe id="preview"></iframe>
+        </div>
+      </section>
+
+      <!-- Lesson 3 -->
+      <section id="colors" class="lesson">
+        <h2>CSS Colors</h2>
+        <p>Colors can be defined using names, HEX, RGB, or HSL values:</p>
+        <pre><code>/* Named color */
+            h1 { color: tomato; }
+
+            /* HEX */
+            p { color: #0b7285; }
+
+            /* RGB */
+            div { background-color: rgb(200, 230, 255); }
+
+            /* HSL */
+            span { color: hsl(160, 60%, 45%); }
+        </code></pre>
+      </section>
+
+      <!-- Lesson 4 -->
+      <section id="box" class="lesson">
+        <h2>CSS Box Model</h2>
+        <p>Every HTML element is a box made of content, padding, border, and margin.</p>
+        <pre><code>div {
+            background: lightblue;
+            padding: 20px;
+            border: 3px solid #0b7285;
+            margin: 15px;
+          }
+        </code></pre>
+      </section>
+
+      <!-- Lesson 5 -->
+      <section id="fonts" class="lesson">
+          <h2>CSS Fonts & Text</h2>
+          <p>You can change font family, size, alignment, spacing, decoration, and more.</p>
+
+          <pre><code>
+        p {
+          font-family: "Poppins", sans-serif;
+          font-size: 18px;
+          text-align: center;
+          letter-spacing: 1px;
+          color: #333;
+        }
+          </code></pre>
+
+          <div class="try-it">
+            <h3>Try It Yourself:</h3>
+            <textarea id="editor-fonts">
+        &lt;p&gt;Hello CSS!&lt;/p&gt;
+
+        &lt;style&gt;
+          p {
+            font-family: Arial;
+            color: purple;
+            text-decoration: underline;
+            font-size: 22px;
+          }
+        &lt;/style&gt;
+            </textarea>
+            <button onclick="runCode('editor-fonts', 'preview-fonts')">Run ▶</button>
+            <iframe id="preview-fonts"></iframe>
+          </div>
+      </section>
+
+      <!-- Lesson 6 -->
+       <section id="backgrounds" class="lesson">
+            <h2>CSS Backgrounds</h2>
+            <p>You can apply colors, images, gradients, and control their size and repeat behavior.</p>
+
+            <pre><code>
+          div {
+            background-color: lightblue;
+          }
+
+          body {
+            background-image: url("background.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+          }
+            </code></pre>
+
+            <div class="try-it">
+              <h3>Try It Yourself:</h3>
+              <textarea id="editor-backgrounds">
+          &lt;div&gt;This box has a background!&lt;/div&gt;
+
+          &lt;style&gt;
+            div {
+              padding: 20px;
+              background: linear-gradient(to right, #74c0fc, #4dabf7);
+              color: white;
+              border-radius: 10px;
+            }
+          &lt;/style&gt;
+              </textarea>
+              <button onclick="runCode('editor-backgrounds', 'preview-backgrounds')">Run ▶</button>
+              <iframe id="preview-backgrounds"></iframe>
+            </div>
+       </section>
+
+       <!-- Lesson 7 -->
+        <section id="flexbox" class="lesson">
+            <h2>CSS Flexbox</h2>
+            <p>Flexbox makes it easy to align and position items in rows or columns.</p>
+
+            <pre><code>
+          .container {
+            display: flex;
+            gap: 10px;
+          }
+
+          .box {
+            width: 100px;
+            height: 100px;
+            background: tomato;
+          }
+            </code></pre>
+
+            <div class="try-it">
+              <h3>Try It Yourself:</h3>
+              <textarea id="editor-flexbox">
+          &lt;div class="container"&gt;
+            &lt;div class="box"&gt;&lt;/div&gt;
+            &lt;div class="box"&gt;&lt;/div&gt;
+            &lt;div class="box"&gt;&lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;style&gt;
+            .container {
+              display: flex;
+              gap: 20px;
+            }
+            .box {
+              width: 80px;
+              height: 80px;
+              background: coral;
+            }
+          &lt;/style&gt;
+              </textarea>
+              <button onclick="runCode('editor-flexbox', 'preview-flexbox')">Run ▶</button>
+              <iframe id="preview-flexbox"></iframe>
+            </div>
+        </section>
+
+        <!-- Lesson 8 -->
+         <section id="grid" class="lesson">
+            <h2>CSS Grid</h2>
+            <p>Grid allows you to create two-dimensional layouts easily.</p>
+
+            <pre><code>
+          .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+          }
+          .cell {
+            background: #4dabf7;
+            padding: 20px;
+            color: white;
+          }
+            </code></pre>
+
+            <div class="try-it">
+              <h3>Try It Yourself:</h3>
+              <textarea id="editor-grid">
+          &lt;div class="grid"&gt;
+            &lt;div class="cell"&gt;1&lt;/div&gt;
+            &lt;div class="cell"&gt;2&lt;/div&gt;
+            &lt;div class="cell"&gt;3&lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;style&gt;
+            .grid {
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              gap: 10px;
+            }
+            .cell {
+              background: #5c7cfa;
+              padding: 20px;
+              color: white;
+              text-align: center;
+            }
+          &lt;/style&gt;
+              </textarea>
+              <button onclick="runCode('editor-grid', 'preview-grid')">Run ▶</button>
+              <iframe id="preview-grid"></iframe>
+            </div>
+         </section>
+
+         <!-- Lesson 9 -->
+          <section id="videos" class="lesson">
+              <h2>Best Video Tutorials to Learn CSS</h2>
+
+              <div class="video-grid">
+                <div class="video-card">
+                  <h3>CSS Full Course (Bro Code)</h3>
+                  <iframe src="https://www.youtube.com/embed/OEV8gMkCHXQ" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-card">
+                  <h3>CSS Crash Course (Traversy Media)</h3>
+                  <iframe src="https://www.youtube.com/embed/yfoY53QXEnI" allowfullscreen></iframe>
+                </div>
+              </div>
+          </section>
+
+    </main>
+  </div>
+
+  <!-- JS -->
+  <script src="../js/lessons.js"></script>
+  <!--Footer-->
+        <footer>
+            <p>&copy;2025 Learn Web Basics. All rights reserved.</p>
+        </footer>
+</body>
+</html>

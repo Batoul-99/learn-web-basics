@@ -1,0 +1,54 @@
+ nav a.active,
+nav a:hover {
+
+  background: linear-gradient(135deg, rgb(149, 22, 180), #ce8909) !important;
+}
+ .quiz-card {
+      padding: 20px;
+      background: #ffffff10;
+      border-radius: 10px;
+      border: 1px solid #ffffff30;
+      margin-bottom: 20px;
+      transition: 0.3s ease;
+    }
+    .quiz-card.correct {
+      border-color: #4caf50;
+      background: #4caf5030;
+    }
+    .quiz-card.wrong {
+      border-color: #ff5252;
+      background: #ff525230;
+    }
+    .quiz-btn {
+      margin-top: 25px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      background: #4b65ff;
+      color: white;
+      font-size: 16px;
+    }
+    #scoreBox {
+      margin-top: 25px;
+      padding: 15px;
+      border-radius: 10px;
+      font-weight: bold;
+      display: none;
+      font-size: 18px;
+    }
+    @media (max-width: 991px) {
+    nav {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+    }
+
+     nav ul {
+        flex-direction: column; /* here I turned the nav in a virtical form on small screens*/
+        gap: 10px;
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -1,0 +1,221 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    background-color: #f4eaea;
+    line-height: 1.6;
+}
+
+/*HEADER */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: black;
+  color: white;
+  padding: 15px 50px;
+}
+
+
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+   
+
+}
+
+nav li a {
+    color: white;
+    text-decoration:  none;
+    font-weight: 500;
+}
+
+nav a.active,
+nav a:hover {
+  border: thin dashed white;
+  padding: 8px;
+  transition:0.3s;
+  transform: scale(1.05);
+  color:#f5fcfa;
+  background: linear-gradient(135deg, #e52e2e, #7a6e2f);
+}
+
+/*TOPIC Section */
+
+.topic {
+  display :flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #0c0d0e, #655d5d,  rgb(198, 4, 4));
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.topic h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  /*background: linear-gradient(135deg, #0b7285, #12b886);*/
+}
+
+.topic p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 25px;
+  /*background: linear-gradient(135deg, #0b7285, #12b886);*/
+}
+
+.btn {
+  display: inline-block;
+  background: white;
+  color: #b60404;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s; /* animate smoothly in 0.3 sec , in order to prevent happening instantly*/
+}
+
+.btn:hover {
+  background: #e6f5f7;
+  transform: scale(1.05); /* enlarges it 105%  of its original size*/
+}
+
+
+.courses {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.courses h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin-bottom: 50px;
+
+  /* The beautiful shifting gradient */
+  background: linear-gradient(
+    90deg, /*90deg means that colors go from left to right */
+    #101415,
+    #d47d1a,
+    #de1515
+  );
+  background-size: 300%;
+  -webkit-background-clip: text; /*here it is a box of gradiennt color , but then we took just text*/
+  color: transparent;
+
+  animation: colorFlow 4s ease-in-out infinite; /*this let the color to move each 4s , the way start slow , mid fast, end fast*/
+}
+
+/* Animation that moves the gradient */
+
+/*0%, 50%, 100% (The Keys) = Time (When it happens).
+background-position: 100% (The Value) = Space (Where the image moves to). */
+
+@keyframes colorFlow {
+  0% { background-position: 0%; } /*: The wallpaper is aligned to the Left.*/
+  50% { background-position: 100%; } /*It slides the wallpaper all the way to the Right. */
+  100% { background-position: 0%; } /*It slides the wallpaper back to the Left. */
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;/*If there isn't enough space on one line for all these items, drop the extras onto a new line.*/
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(219, 30, 30, 0.1);
+  padding: 25px;
+  width: 280px;
+  text-align: center;
+  transition: transform 0.3s;/**interactive elements be smooth instead of instant.*/
+}
+
+.card:hover {
+  transform: translateY(-5px);/* it moves upwards*/
+}
+
+.card img {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  color: #0b0d0e;
+}
+
+.card p {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+.btn.small {
+  font-size: 0.9rem;
+  padding: 8px 15px;
+}
+
+
+footer {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+@media (max-width: 991px) {
+  nav {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+     nav ul {
+        flex-direction: column; /* here I turned the nav in a virtical form on small screens*/
+        gap: 10px;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+  
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+     nav ul {
+        flex-direction: column; /* here I turned the nav in a virtical form on small screens*/
+        gap: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .topic h2 {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 600px) {
+  nav li a{
+    font-size: 14px;
+  }
+}

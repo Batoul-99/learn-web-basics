@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    background-color: #f4eaea;
+    line-height: 1.6;
+}
+
+/*FIRST NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: black;
+  color: white;
+  padding: 15px 50px;
+}
+
+
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+   
+
+}
+
+nav li a {
+    color: white;
+    text-decoration:  none;
+    font-weight: 500;
+}
+
+nav a.active,
+nav a:hover {
+  border: thin dashed white;
+  padding: 8px;
+  transition:0.3s;
+  transform: scale(1.05);
+  color:#f5fcfa;
+  background: linear-gradient(135deg, #e829bf, #478fdc);
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #fff;
+  color: #000;
+}
+
+
+/* Contact Page */
+.contact-container {
+  max-width: 700px; /*here I am preserving it's shape*/
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.contact-bg-box {
+  background-color: black; 
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.contact-form .form-group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.contact-form label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+  color: rgb(234, 30, 153);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.2);  
+  border: 1px solid #fff;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #eee;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #00f;
+  outline: none;
+  background: vrgba(5, 5, 5, 0.3);
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  background: rgba(0,123,255,0.8);
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: rgba(0,123,255,1);
+}
+
+footer {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+@media (max-width: 991px) {
+  nav {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+     nav ul {
+        flex-direction: column; /* here I turned the nav in a virtical form on small screens*/
+        gap: 10px;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+     nav ul {
+        flex-direction: column; 
+        gap: 10px;
+        width: 100%;
+        text-align: center;
+    }
+}
+@media (max-width: 600px) {
+  nav li a{
+    font-size: 14px;
+  }
+}

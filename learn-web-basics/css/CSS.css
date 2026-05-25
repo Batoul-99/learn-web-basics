@@ -1,0 +1,7 @@
+
+nav a.active,
+nav a:hover {
+
+  background: linear-gradient(135deg, rgb(237, 57, 57), #137591) !important;
+}
+

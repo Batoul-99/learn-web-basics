@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz | Learn Web Basics</title>
+  <link rel="stylesheet" href="../css/quizzes.css" />
+  <link rel="stylesheet" href="../css/lessons.css" />
+  
+</head>
+<body>
+<!--first nav-->
+    <nav>
+            <img class="logo" src="../images/logo.svg" width="100" height="100" alt="logo">
+            <ul class="links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="html.html" >HTML</a></li>
+                <li><a href="css.html">CSS</a></li>
+                <li><a href="js.html">JavaScript</a></li>
+                <li><a href="quizzes.html"  class="active">Quizzes</a></li>
+                <li><a href="references.html">References</a></li>
+                <li><a href="AboutUs.html">AboutUs</a></li>
+                <li><a href="contact.html">ContactUs</a></li>
+            </ul>
+        </nav>
+  <div class="lesson-container">
+
+    <aside class="sidebar">
+      <h2>Quiz Topics</h2>
+      <ul>
+        <li><a>HTML</a></li>
+        <li><a>CSS</a></li>
+        <li><a>JavaScript</a></li>
+      </ul>
+    </aside>
+
+    <main class="lesson-content">
+      <h2>Ultimate Web Basics Quiz </h2>
+      <p>25 Questions — Test your HTML, CSS, and JavaScript knowledge!</p>
+
+      <form id="quizForm"></form>
+
+      <button class="quiz-btn" onclick="submitQuiz()">Submit Quiz</button>
+      <button class="quiz-btn" style="background:#333;margin-left:10px" onclick="restartQuiz()">Restart</button>
+
+      <div id="scoreBox"></div>
+    </main>
+  </div>
+
+  <script>
+    // Data of the quiz
+    const questions = [
+      // HTML (10 questions)
+      { q: "What does HTML stand for?", a: 1, options: ["Hyper Trainer Marking Language", "HyperText Markup Language", "Home Tool Markup List"] },
+      { q: "Which tag is used to insert an image?", a: 0, options: ["&lt;img&gt;", "&lt;image&gt;", "&lt;pic&gt;"] },
+      { q: "Which attribute is required in an &lt;img&gt; tag?", a: 1, options: ["href", "src", "link"] },
+      { q: "Which tag is used for the largest heading?", a: 0, options: ["&lt;h1&gt;", "&lt;h6&gt;", "&lt;header&gt;"] },
+      { q: "What does &lt;br&gt; do?", a: 2, options: ["Creates bold text", "Creates a new paragraph", "Creates a line break"] },
+      { q: "Which tag creates a table row?", a: 1, options: ["&lt;td&gt;", "&lt;tr&gt;", "&lt;table-row&gt;"] },
+      { q: "Which tag creates a list item?", a: 2, options: ["&lt;list&gt;", "&lt;item&gt;", "&lt;li&gt;"] },
+      { q: "What does the &lt;title&gt; element control?", a: 1, options: ["Main heading", "Browser tab text", "Page footer"] },
+      { q: "Which tag contains website metadata?", a: 0, options: ["&lt;head&gt;", "&lt;meta&gt;", "&lt;info&gt;"] },
+      { q: "Which input type creates a password field?", a: 2, options: ["text", "hidden", "password"] },
+
+      // CSS (8 questions)
+      { q: "What does CSS stand for?", a: 2, options: ["Creative Style Set", "Computer Style Sheets", "Cascading Style Sheets"] },
+      { q: "Which property changes text color?", a: 0, options: ["color", "font-color", "text-shade"] },
+      { q: "How to center text?", a: 1, options: ["align:center;", "text-align:center;", "center:true;"] },
+      { q: "Which CSS unit is relative to the root font size?", a: 2, options: ["px", "%", "rem"] },
+      { q: "Which property changes the background color?", a: 0, options: ["background-color", "bg-color", "color-fill"] },
+      { q: "Which property controls spacing inside an element?", a: 1, options: ["margin", "padding", "spacing"] },
+      { q: "Which property makes corners rounded?", a: 2, options: ["border-color", "corner-radius", "border-radius"] },
+      { q: "Which display value arranges elements in a row automatically?", a: 0, options: ["flex", "inline-block", "grid"] },
+
+      // JavaScript (7 questions)
+      { q: "Which symbol starts a JS comment?", a: 0, options: ["//", "&lt;!-- --&gt;", "##"] },
+      { q: "How do you create a variable?", a: 1, options: ["variable x", "let x", "create x"] },
+      { q: "Which HTML tag holds JavaScript?", a: 0, options: ["&lt;script&gt;", "&lt;javascript&gt;", "&lt;js&gt;"] },
+      { q: "How do you call a function named greet?", a: 1, options: ["call greet", "greet()", "run.greet"] },
+      { q: "Which method writes to the browser console?", a: 2, options: ["print()", "echo()", "console.log()"] },
+      { q: "What type of value is 'true'?", a: 1, options: ["Number", "Boolean", "String"] },
+      { q: "How do you show an alert box?", a: 0, options: ["alert('Hi')", "popup('Hi')", "show('Hi')"] }
+    ];
+
+    // here this shuffle the questions for each refresh
+    questions.sort(() => Math.random() - 0.5);
+
+    const form = document.getElementById("quizForm");
+    // array of questions each in it is an item and have an index
+    questions.forEach((item, index) => {
+      const card = document.createElement("div");
+      card.className = "quiz-card";
+      
+      card.innerHTML = `
+      
+        <h3>${index + 1}. ${item.q}</h3>
+        ${item.options
+          .map( //here a loop into the options , where value indicates the radio clicked
+            (opt, i) =>
+              `<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label><br>`// q : question id , value option id
+          )
+          .join("")}
+      `;
+      form.appendChild(card); //to be printed on the actual webpage
+    });
+
+    function submitQuiz() {
+      let score = 0;
+      const cards = document.querySelectorAll(".quiz-card"); //grabs all question boxes from screen
+
+      questions.forEach((q, index) => {
+        
+        const selected = document.querySelector(`input[name="q${index}"]:checked`);//specific name q0, q1, etc., but ONLY if it has the :checked state.
+        const card = cards[index];
+
+        // Reset styles first
+        card.classList.remove("correct", "wrong"); //take away old marks
+
+        if (!selected) {
+          card.classList.add("wrong");
+          return;
+        }
+
+        if (parseInt(selected.value) === q.a) {
+          score++;
+          card.classList.add("correct");
+        } else {
+          card.classList.add("wrong");
+        }
+      });
+
+      const percent = Math.round((score / questions.length) * 100);
+
+      const box = document.getElementById("scoreBox");
+      box.style.display = "block";
+      box.style.background = score === questions.length ? "#4caf5090" : "#ff525290";
+      
+      // printing score
+      box.textContent = `You scored ${score}/${questions.length} (${percent}%)`;
+    }
+    //restart
+    function restartQuiz() {
+      location.reload();
+    }
+  </script>
+    <footer>
+      <p>&copy;2025 Learn Web Basics. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
